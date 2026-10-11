@@ -133,7 +133,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({
                 <iframe
                   title="The Rich Unisex Salon Google Maps Location"
                   src="https://maps.google.com/maps?q=19.2077651,73.1845372&hl=en&z=16&output=embed"
-                  className="w-full h-full border-0 filter contrast-[1.05] grayscale-[0.2]"
+                  className="w-full h-full border-0"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
