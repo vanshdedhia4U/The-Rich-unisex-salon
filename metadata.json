@@ -1,0 +1,6 @@
+{
+  "name": "The Rich Unisex Salon",
+  "description": "Premier unisex salon in Ambernath offering luxury hair styling, treatments, beauty therapies, online appointment scheduler with secure payment, and exclusive client & admin portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
