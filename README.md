@@ -4,33 +4,35 @@ Official web application for **The Rich Unisex Salon**, Ambernath East. Features
 
 ---
 
-## 🚀 How to Deploy on GitHub Pages (Fixing Blank Screen)
+## 🚀 How to Deploy on GitHub Pages (Fixing "Only Name Showing / Loading")
 
-If you uploaded this website to GitHub and see a blank white page, it is because GitHub Pages defaults to serving unbuilt source code files instead of running the Vite build.
+### Why did you only see "The Rich Unisex Salon" and "Loading luxury experience..."?
+1. **GitHub Pages Root Serving**: When GitHub Pages is set to **"Deploy from a branch"** with the folder set to **`/(root)`**, GitHub Pages served raw source files (`/src/main.tsx`). Web browsers cannot execute uncompiled TypeScript/JSX directly, so the page stayed paused on the initial HTML text.
+2. **Missing Trailing Slash**: If visiting `https://username.github.io/repo` without a trailing slash `/`, browsers look for assets at the root domain (`https://username.github.io/assets/`) instead of inside your repository folder (`https://username.github.io/repo/assets/`).
 
-Here is how to deploy in 2 clicks:
-
-### Method 1: Using GitHub Actions (Recommended & Automatic)
-
-This repository includes an automated GitHub Actions workflow in `.github/workflows/deploy.yml`.
-
-1. Go to your repository on GitHub.
-2. Click **Settings** (tab at the top).
-3. In the left sidebar, click **Pages**.
-4. Under **Build and deployment** > **Source**, click the dropdown and choose **GitHub Actions** (instead of "Deploy from a branch").
-5. That's it! GitHub will automatically run the build and publish your site at `https://<your-username>.github.io/<repo-name>/`.
+### How We Fixed It:
+- **Triple-Compatibility Build**: The repository now comes pre-built into `docs/`, `dist/`, AND root `assets/`.
+- **Automatic Trailing Slash Redirect**: Subfolder URLs are immediately normalized to include the trailing slash.
+- **Smart Static Fallback**: If served statically from the repository root, `index.html` automatically detects the static environment and boots the compiled production bundle.
 
 ---
 
-### Method 2: Deploying via `/docs` Folder (No Actions Needed)
+### Step-by-Step GitHub Pages Setup (Choose Any Option):
 
-The repository also includes a pre-built `/docs` folder ready for GitHub Pages:
-
+#### Option 1: Direct `/docs` Folder (Simplest — 1 Minute)
 1. Go to your repository on GitHub.
-2. Click **Settings** → **Pages**.
+2. Click **Settings** (tab at the top) → **Pages** (on the left menu).
 3. Under **Build and deployment** > **Source**, keep **Deploy from a branch**.
-4. Under **Branch**, select `main` (or `master`) and change the folder from `/(root)` to **/docs**.
-5. Click **Save**. Your site will be live within 1 minute!
+4. Under **Branch**, select `main` (or `master`) and change the folder dropdown from `/(root)` to **/docs**.
+5. Click **Save**. Refresh in 1 minute and the entire website will load with all images and features!
+
+#### Option 2: Automatic GitHub Actions (Professional)
+1. Go to your GitHub repository → **Settings** → **Pages**.
+2. Under **Build and deployment** > **Source**, click the dropdown and choose **GitHub Actions**.
+3. GitHub will run `.github/workflows/deploy.yml` automatically on every commit.
+
+#### Option 3: Deploy from `/ (root)`
+With our new built-in static loader and synced `assets/` directory, deploying from **main / (root)** will now also automatically load the full website without being stuck!
 
 ---
 

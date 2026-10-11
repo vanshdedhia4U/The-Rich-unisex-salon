@@ -12,17 +12,67 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        // Ensure trailing slash on subdirectory URLs (e.g. GitHub Pages https://user.github.io/repo)
+        // so relative asset paths resolve correctly to the repo folder
+        var p = window.location.pathname;
+        if (p && !p.endsWith('/') && !p.split('/').pop().includes('.')) {
+          window.location.replace(p + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   </head>
   <body style="background-color: #0c0a09; color: #f5f5f4; margin: 0; min-height: 100vh;" class="bg-stone-950 text-stone-100 antialiased font-sans selection:bg-amber-500/30 selection:text-amber-200">
     <div id="root">
-      <div style="min-height: 100vh; background-color: #0c0a09; display: flex; align-items: center; justify-content: center; color: #d4af37; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
-        <div style="text-align: center; padding: 24px;">
-          <div style="font-size: 24px; font-weight: bold; letter-spacing: 0.05em; color: #fef08a; margin-bottom: 8px;">THE RICH UNISEX SALON</div>
-          <div style="font-size: 13px; color: #a8a29e; letter-spacing: 0.15em; text-transform: uppercase;">Loading luxury experience...</div>
+      <div data-loading-indicator="true" style="min-height: 100vh; background-color: #0c0a09; display: flex; align-items: center; justify-content: center; color: #d4af37; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px;">
+        <div style="text-align: center; max-width: 440px; width: 100%;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+              <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #fef08a; margin-bottom: 8px; font-family: 'Playfair Display', Georgia, serif;">THE RICH UNISEX SALON</div>
+          <div style="font-size: 13px; color: #d4af37; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px;">Luxury Hair, Skin &amp; Wellness</div>
+          <div id="loader-status" style="font-size: 12px; color: #a8a29e; letter-spacing: 0.05em;">Loading luxury experience...</div>
         </div>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+        // Fallback loader for static hosting (e.g. GitHub Pages serving from repository root)
+        function checkAndLoadFallback() {
+          var root = document.getElementById('root');
+          if (root && root.querySelector && root.querySelector('[data-loading-indicator]')) {
+            console.log('Activating static bundle fallback for GitHub Pages / static hosting...');
+            var status = document.getElementById('loader-status');
+            if (status) status.innerText = 'Connecting to salon services...';
+            
+            if (!document.querySelector('link[href*="assets/index.css"]')) {
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.crossOrigin = 'anonymous';
+              link.href = './assets/index.css';
+              document.head.appendChild(link);
+            }
+            
+            if (!document.querySelector('script[src*="assets/index.js"]')) {
+              var s = document.createElement('script');
+              s.type = 'module';
+              s.crossOrigin = 'anonymous';
+              s.src = './assets/index.js';
+              document.body.appendChild(s);
+            }
+          }
+        }
+        setTimeout(checkAndLoadFallback, 800);
+      })();
+    </script>
   </body>
 </html>
 
