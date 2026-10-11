@@ -116,7 +116,7 @@ export const Storage = {
     return stored.map((item) => {
       if (!item.imageUrl) {
         const found = INITIAL_GALLERY.find((g) => g.id === item.id);
-        return { ...item, imageUrl: found?.imageUrl || '/images/salon_interior.jpg' };
+        return { ...item, imageUrl: found?.imageUrl || 'images/salon_interior.jpg' };
       }
       return item;
     });

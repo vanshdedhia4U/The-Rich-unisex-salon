@@ -8,6 +8,7 @@ import {
   Calendar 
 } from 'lucide-react';
 import { Stylist } from '../types';
+import { getAssetUrl } from '../lib/asset';
 
 interface ExperienceSectionProps {
   stylists: Stylist[];
@@ -80,7 +81,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-stone-950 p-6 sm:p-8 rounded-2xl border border-stone-800">
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-stone-800 shadow-xl">
             <img
-              src="/images/salon_chair.jpg"
+              src={getAssetUrl('images/salon_chair.jpg')}
               alt="The Rich Unisex Salon Styling Stations"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

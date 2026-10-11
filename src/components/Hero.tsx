@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, MapPin, Calendar, ArrowRight, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
 import { SalonSettings } from '../types';
+import { getAssetUrl } from '../lib/asset';
 
 interface HeroProps {
   settings: SalonSettings;
@@ -107,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-amber-500/30 group shadow-2xl">
                 {/* Real Vibrant Color Salon Photography */}
                 <img
-                  src="/images/salon_interior.jpg"
+                  src={getAssetUrl('images/salon_interior.jpg')}
                   alt="The Rich Unisex Salon Interior - Ambernath"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-105 contrast-105"
                   referrerPolicy="no-referrer"
@@ -161,7 +162,7 @@ export const Hero: React.FC<HeroProps> = ({
                   className="group/thumb cursor-pointer relative aspect-[4/3] rounded-lg overflow-hidden border border-stone-800 hover:border-amber-400/60 transition-all shadow-md"
                 >
                   <img
-                    src="/images/hair_balayage.jpg"
+                    src={getAssetUrl('images/hair_balayage.jpg')}
                     alt="Hair Color & Balayage"
                     className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -176,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({
                   className="group/thumb cursor-pointer relative aspect-[4/3] rounded-lg overflow-hidden border border-stone-800 hover:border-amber-400/60 transition-all shadow-md"
                 >
                   <img
-                    src="/images/mens_fade.jpg"
+                    src={getAssetUrl('images/mens_fade.jpg')}
                     alt="Men Fade Cut"
                     className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -191,7 +192,7 @@ export const Hero: React.FC<HeroProps> = ({
                   className="group/thumb cursor-pointer relative aspect-[4/3] rounded-lg overflow-hidden border border-stone-800 hover:border-amber-400/60 transition-all shadow-md"
                 >
                   <img
-                    src="/images/bridal_hair.jpg"
+                    src={getAssetUrl('images/bridal_hair.jpg')}
                     alt="Bridal Styling"
                     className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
                     referrerPolicy="no-referrer"

@@ -295,7 +295,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Soft transitions from natural deep roots into sun-kissed honey caramel ends with healthy cuticle shine.',
     tags: ['Balayage', 'Ammonia Free', 'Gloss Toner'],
     gradientTheme: 'from-amber-900/60 via-stone-900 to-amber-950/80',
-    imageUrl: '/images/hair_balayage.jpg',
+    imageUrl: 'images/hair_balayage.jpg',
     iconType: 'sparkles',
   },
   {
@@ -308,7 +308,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Flawless zero-gap low skin blend with textured French crop top and clean geometric cheek lines.',
     tags: ['Skin Fade', 'Razor Sharp', 'Matte Finish'],
     gradientTheme: 'from-stone-800 via-neutral-900 to-stone-950',
-    imageUrl: '/images/mens_fade.jpg',
+    imageUrl: 'images/mens_fade.jpg',
     iconType: 'scissors',
   },
   {
@@ -321,7 +321,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Transformative peptide treatment restoring severe heat damage into liquid silk straight strands.',
     tags: ['Botoplex', 'Zero Frizz', '4-Month Lock'],
     gradientTheme: 'from-yellow-950/60 via-stone-900 to-amber-900/50',
-    imageUrl: '/images/botoplex_keratin.jpg',
+    imageUrl: 'images/botoplex_keratin.jpg',
     iconType: 'droplet',
   },
   {
@@ -334,7 +334,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Textured low bun adorned with micro-fresh florals and jewel hair pins for a regal wedding reception.',
     tags: ['Bridal Couture', 'Textured Bun', 'Long Wear'],
     gradientTheme: 'from-rose-950/60 via-stone-900 to-amber-950/70',
-    imageUrl: '/images/bridal_hair.jpg',
+    imageUrl: 'images/bridal_hair.jpg',
     iconType: 'crown',
   },
   {
@@ -347,7 +347,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Deep vortex cleanse with hyaluronic infusion leaving immediate plump luminescence without irritation.',
     tags: ['Hydra Facial', 'Glass Skin', 'Deep Extraction'],
     gradientTheme: 'from-teal-950/50 via-stone-900 to-stone-950',
-    imageUrl: '/images/hydra_facial.jpg',
+    imageUrl: 'images/hydra_facial.jpg',
     iconType: 'sparkles',
   },
   {
@@ -360,7 +360,7 @@ export const INITIAL_GALLERY: GalleryItem[] = [
     description: 'Double essential steam therapy paired with straight-razor detailing and cedarwood nourishment.',
     tags: ['Hot Towel', 'Precision Shave', 'Beard Butter'],
     gradientTheme: 'from-orange-950/50 via-stone-900 to-stone-950',
-    imageUrl: '/images/beard_grooming.jpg',
+    imageUrl: 'images/beard_grooming.jpg',
     iconType: 'feather',
   },
 ];

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, Scissors, Droplet, Crown, Feather, X, Calendar, ArrowRight, Eye } from 'lucide-react';
 import { GalleryItem, SalonService } from '../types';
+import { getAssetUrl } from '../lib/asset';
 
 interface GallerySectionProps {
   gallery: GalleryItem[];
@@ -86,7 +87,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
               {/* Visual Card Photo Artwork container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-stone-800/80 bg-stone-900">
                 <img
-                  src={item.imageUrl || '/images/salon_interior.jpg'}
+                  src={getAssetUrl(item.imageUrl || 'images/salon_interior.jpg')}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -170,7 +171,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
               {/* High-Res Photo Banner */}
               <div className="aspect-[16/9] rounded-xl overflow-hidden border border-stone-800 relative bg-stone-950">
                 <img
-                  src={activeItem.imageUrl || '/images/salon_interior.jpg'}
+                  src={getAssetUrl(activeItem.imageUrl || 'images/salon_interior.jpg')}
                   alt={activeItem.title}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
